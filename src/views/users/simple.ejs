@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadatos-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Titulo-->
+    <title>Dark Side Wines</title>
+    
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="./images/943026.png">
+   
+    <!-- Estilos personalizados CSS-->
+    <link rel="stylesheet" href="../css/users/register.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    
+    
+
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+ 
+    <!-- Fuente Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+        
+    <!-- Barra de navegacación-->
+      <%- include ("../partials/header") %> 
+  
+    <body>
+        
+    <main>
+        <h2 class="title-register">Ingresá tus datos para registrarte</h2>
+          <div class="container-form">
+            <form action="/users/register" method="POST" enctype="multipart/form-data" class="registration-form" id="formulario">
+                <div id="grupo-nombreUsuario">    
+                   <div class="element-form" id="input-nombreUsuario">
+                      <label>Nombre completo:</label>
+                      <input type="text" name="nombreUsuario" class="formulario-input">
+                   </div>
+                   <p class="formulario-input-error">El nombre debe ser correcto</p>
+                </div>
+                <div class="element-form">
+                   <label>Categoría de usuario:</label>
+                   <select name="categoria">
+                      <option value="0" selected>Estándar</option>
+                      <option value="1">Administrador</option>
+                   </select>
+                </div>
+                <div id="grupo-emailUsuario"> 
+                   <div class="element-form" id="input-emailUsuario">
+                      <label>Correo electrónico:</label>
+                      <input type="email" name="emailUsuario" class="formulario-input">
+                   </div>
+                   <p class="formulario-input-error">Debes ingresar un correo válido</p>
+                </div>  
+                <div id="grupo-passwordUsuario">
+                   <div class="element-form" id="input-passwordUsuario">
+                      <label>Contraseña:</label>
+                      <input type="password" name="passwordUsuario" class="formulario-input">
+                   </div>
+                   <p class="formulario-input-error">La contraseña debe contener al menos 8 dígitos, un número y una letra mayúscula</p>
+                </div>
+                <div class="element-form">
+                   <button type="submit">Registrarme</button>
+                </div>
+             </form>
+        </div>
+        </div>
+    </main>
+    
+    
+     <!-- Footer-->
+
+     <%- include ("../partials/footer") %> 
+      
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

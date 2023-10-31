@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+.hero {
+    background-image: url("../../images/copa-de-vino-portada-1024x478.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; /* Establece una altura mínima para asegurar que el contenido sea visible. */
+  }
+
+/*   main{
+    background-image: url('../../images/fondo-madera-marron.jpg');    
+    background-attachment: fixed;
+    padding-bottom: 50px;
+    border-top: 15px solid ;
+  } */
+
+.hero p{
+    color: beige;
+    font-size: 30px;
+    margin: auto;
+    font-weight: 900;
+    padding-left: 20px;
+}
+
+
+
+/* ------ Detalle producto -------- */
+h1 {
+    font-size: 2em;
+}
+
+main {
+    padding: 20px;
+    background-color: #fffdd0;
+}
+
+.detalle-producto {
+    text-align: center;
+    border: 3px solid;
+    padding: 20px;
+    max-width: 800px;
+    margin: 30px auto; /* Centra horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra verticalmente */
+}
+
+.detalle-producto img {
+    max-width: 100%; /* La imagen no superará el ancho de su contenedor */
+    max-height: 300px; /* Establece una altura máxima para la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+    border-radius: 5px;
+}
+
+
+h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1em;
+    color: #777;
+    margin: 10px 0;
+}
+
+.precio {
+    font-size: 1.7em;
+    color: #007bff; /* Color de enlace */
+}
+
+
+/*------ cantidad de producto a agregar al carrito -------- */
+
+.cantidad-producto {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+
+.btn-cantidad {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#cantidad {
+    width: 50px;
+    text-align: center;
+}
+
+.flexbox-price{
+    display: flex;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el botón "Agregar al carrito" */
+
+.comprar {
+    background-color: #965b72; /* Color de botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}

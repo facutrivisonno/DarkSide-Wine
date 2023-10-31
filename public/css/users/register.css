@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+}
+
+
+
+
+main{
+    background-image: url('../../images/fondo-madera-marron.jpg');
+    padding: 0 18px 45px ;
+}
+
+.title-register{
+    text-align: center;
+    font-size: 32px;
+    color: #B8860B;
+    padding: 20px 0;
+}
+
+.container-form {
+    background-color: #343a40;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 35px;
+    border-radius: 5px;
+}
+
+.formulario__mensaje {
+	background: #F66060;
+	padding: 0px 15px;
+	border-radius: 3px;
+	display: none;
+    margin-bottom: 10px;
+}
+
+
+.element-form {
+    margin-bottom: 5px;
+}
+
+.element-form label {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 4px;
+    color: #B8860B;
+    transition: all .3s ease;
+}
+
+.element-form input:focus {
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.element-input{
+    position: relative;
+}
+
+.element-input input{
+    width: 100%;
+}
+
+.estado-validacion{
+    position:absolute;
+    right: 8px;
+    top: 9px;
+    opacity: 0;
+}
+
+
+.errores-form{
+    color:#bb2929;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+
+
+
+.element-form input,
+.element-form select,
+.element-form button {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+
+.element-form button {
+    color: #fff;
+    background-color:#965b72;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    margin: 10px 0;
+}
+
+
+.element-form button:hover {
+    background-color: #B8860B;
+}
+
+.element-error{
+    font-size: 13px;
+	margin-bottom: 12px;
+	display: none;
+    color: #fff;
+}
+
+
+
+
+/* ------- estilos para validaciones -------- */
+
+.element-form-correcto .estado-validacion{
+    color: #1ed12d;
+    opacity: 1
+}
+
+.element-form-incorrecto .estado-validacion{
+    color: #bb2929;
+    opacity: 1
+}
+
+.element-form-incorrecto .formulario-input{
+
+    border: 3px solid #bb2929;
+}
+
+.element-error-activo {
+	display: block;
+}
+
+
+@media (min-width: 580px) {
+    .element-form label {
+        font-size: 18px;
+        display: block;
+    }
+    .element-form input,
+    .element-form select,
+    .element-form button {
+        padding: 6px;
+        
+}
+}
+
+@media (min-width: 780px) {
+    .element-form input,
+    .element-form select,
+    .element-form button {
+        padding: 3px;
+        
+}
+}

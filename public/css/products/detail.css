@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+
+
+.hero {
+    background-image: url("../../images/copa-de-vino-portada-1024x478.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; /* Establece una altura mínima para asegurar que el contenido sea visible. */
+  }
+
+  main{
+    background-image: url('../../images/fondo-madera-marron.jpg');    
+    background-attachment: fixed;
+    padding-bottom: 50px;
+    border-top: 15px solid ;
+  }
+
+.hero p{
+    color: beige;
+    font-size: 30px;
+    margin: auto;
+    font-weight: 900;
+    padding-left: 20px;
+}
+
+/* ------ Detalle producto -------- */
+
+.product-detail{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 2); 
+    border-radius: 8px; 
+    margin: 15px;
+    padding: 15px;
+    max-width: 700px;
+}
+
+.product-detail h2{
+  color: #fff
+}
+
+.container-image{
+    margin: auto;
+    padding: 10px; 
+    width: 80%;
+}
+
+.image-product{
+  cursor: pointer ;
+}
+
+.detail-price{
+    font-size: 28px;
+    color: #965b72
+} 
+
+.add-car{
+  padding: 4px;
+  background-color: #B8860B;
+  font-weight: bold;
+}
+
+
+/*------ Media queries ------- */
+
+@media (min-width: 500px){
+  .product-detail{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 2); 
+    border-radius: 8px; 
+    margin: 30px;
+    padding: 30px;
+}
+  
+  
+  .container-image{
+    margin: auto;
+    padding: 10px; 
+    width: 70%;
+}
+}
+
+
+@media (min-width: 650px){
+  
+  
+  .container-image{
+    margin: auto;
+    padding: 10px; 
+    width: 50%;
+}
+  .detail-price{
+    font-size: 22px;
+    color: #965b72
+  } 
+  
+}

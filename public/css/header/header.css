@@ -1,0 +1,15 @@
+/* Personalizacion header */
+.custom-search-button{
+    background-color: black !important;
+    color: #ffffff !important;
+    border-color: #B8860B !important;
+}
+
+.custom-search-button:hover{
+    background-color: #B8860B  !important;
+    opacity: 0.9;
+}
+
+.custom-margin{
+    margin-left: 10px;
+}

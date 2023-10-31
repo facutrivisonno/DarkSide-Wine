@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadatos-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Titulo-->
+    <title>Dark Side Wines</title>
+    
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="./images/943026.png">
+   
+    <!-- Estilos personalizados CSS-->
+    <link rel="stylesheet" href="../css/products/detaile.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    
+    
+    
+
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+ 
+    <!-- Fuente Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+    <header>
+        
+        <!-- Barra de navegacación-->
+        <%- include ("../partials/header") %> 
+         
+    </header>
+
+    <body>
+        
+
+        <main>
+            <section class="detalle-producto">
+                <img src="../images/<%=product.imagen%>" alt="Vino 1" class="image-product">
+                <h2><%=product.nombre%></h2>
+                <p><%=product.descripcion%></p>
+                <div class="flexbox-price">
+                    <span class="precio">$20.00</span>
+                    <div class="cantidad-producto">
+
+                        <input type="number" id="cantidad" value="1" min="1">
+
+                    </div>
+                    
+                </div>
+                
+                <button class="comprar">Agregar al carrito</button> 
+                <form method="POST" action="/products/delete/<%=product.id%>?_method=delete">
+                    <button type="submit" class="buttonDelete">Eliminar</button>
+                </form>
+                <button type="submit" class="buttonDelete"><a href="/products/edit/<%=product.id%>">Editar</a></button>
+                
+            </section>
+        </main>
+
+        <%- include ("../partials/footer") %> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

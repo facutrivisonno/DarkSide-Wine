@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+}
+
+.title-register{
+    text-align: center;
+    font-size: 32px;
+    color: #B8860B;
+    padding: 36px 0;
+}
+
+main{
+    background-image: url('../../images/fondo-madera-marron.jpg');
+    opacity: 1; 
+    padding: 0 18px 45px ;
+    border-top: 15px solid ;
+}
+
+.container-form {
+    background-color: #343a40;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 35px;
+    border-radius: 5px;
+}
+
+.errores-form{
+    color:#bb2929;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+
+.element-form {
+    margin-bottom: 5px;
+}
+
+.element-form label {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 4px;
+    color: #B8860B;
+}
+
+.element-form input{
+    color: fff;
+}
+
+.element-form input,
+.element-form select,
+.element-form button {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+.element-form button {
+    color: #fff;
+    background-color:#965b72;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+}
+
+
+
+.element-form button:hover {
+    background-color: #B8860B;
+}
+
+
+.formulario-input-incorrecto{
+    color: #bb2929;
+}
+
+.formulario-input-incorrecto .formulario-input{
+    border: 3px solid #bb2929;
+}
+
+.formulario-input-error{
+    display: none;
+    font-size: 15px;
+    margin-bottom: 15px
+}
+
+.formulario-input-correcto{
+    color: green;
+}
+.formulario-input-correcto .formulario-input{
+    border: 3px solid green;
+}
+
+.formulario-input-error-activo{
+    display: block;
+}
+
+
+
+@media (min-width: 580px) {
+    .element-form label {
+        font-size: 18px;
+        display: block;
+    }
+    .element-form input,
+    .element-form select,
+    .element-form button {
+        padding: 6px;
+        
+}
+}
+
+@media (min-width: 780px) {}
