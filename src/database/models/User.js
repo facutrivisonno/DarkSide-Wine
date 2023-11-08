@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.INTEGER
         },
-        usertype: {
+        userType: {
             type: dataTypes.INTEGER
         },
     };
@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-    const Product = sequelize.define(alias, cols, config)
+    const Users = sequelize.define(alias, cols, config)
 
-    return Product
+    return Users
 }

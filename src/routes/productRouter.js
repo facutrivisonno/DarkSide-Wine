@@ -22,11 +22,17 @@ let storage = multer.diskStorage({
 let fileUpload = multer({storage:storage})
 
 
+// Middleware
+const adminMiddleware = require("../middlewares/adminMiddleware")
+
 
 router.get("/", productController.list);
 router.get("/category/:id", productController.listCategory);
+router.get("/cellar/:id", productController.listCellar);
 
-router.get("/create", productController.createProduct);
+router.get("/search", productController.search)
+
+router.get("/create", adminMiddleware ,productController.createProduct);
 router.post("/create", fileUpload.single("imageProduct") ,productController.processCreate);
 
 router.get("/edit/:id", productController.editProduct);

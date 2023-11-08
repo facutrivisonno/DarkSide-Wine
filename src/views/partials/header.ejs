@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="../css/header/header.css">
-<link rel="stylesheet" href="../../css/header/header.css">
+<link rel="stylesheet" href="/css/header/header.css">
+
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
@@ -30,21 +30,22 @@
             <li class="nav-item">
                 <a class="nav-link" href="/products/create"><i class="bi bi-cart-plus"></i></a>
             </li>
-            <% if(locals.isLogged && locals.userLogged.userType === 1) { %>
+            <% if(isLogged && userLogged.userType == 1) { %>
               <li class="nav-item">
-                <a class="nav-link" href="/products/create">aaaaaaaaaa</a>
-            </li>
+                <a class="nav-link" href="/products/create">Agregar producto</a>
+              </li>
             <%  }  %>
                 
-            
+
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+
+        <form action="/products/search" method="GET" class="d-flex" role="search">
+          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-outline-success custom-search-button" type="submit">Search</button>
         </form>
 
         <ul class="navbar-nav custom-margin">
-            <% if(!locals.isLogged) { %>
+            <% if(!isLogged) { %>
               <li class="nav-item">
                 <a class="nav-link" href="/users/register">Registrarse</a>
               </li>
@@ -53,7 +54,7 @@
               </li>
             <%  } else { %>
               <li class="nav-item">
-                <span class="nav-link" href="/users/logout">Hola, <%=locals.userLogged.nombre %></a>
+                <span class="nav-link" href="/users/logout">Hola, <%=userLogged.nombre %></a>
               </li> 
               <li class="nav-item">
                 <a class="nav-link" href="/users/logout">Logout</a>

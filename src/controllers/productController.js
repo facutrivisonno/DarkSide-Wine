@@ -1,4 +1,5 @@
-const db = require("../database/models")
+const { Op } = require("sequelize");
+const db = require("../database/models");
 
 const productController = {
     list: (req,res,next) => {
@@ -21,6 +22,36 @@ const productController = {
             .then((products) => {
                 res.render("./products/productsCategory", {products})
             })
+    },
+    
+    listCellar:(req,res) => {
+        const cellarId = req.params.id
+        
+        db.Products.findAll({
+            where:{
+                id_cellars: cellarId
+            }
+        })
+            .then((products) => {
+                res.render("./products/productsCellar", {products})
+            })
+    },
+
+
+    search: (req,res,next) => {
+        
+        db.Products.findAll({
+            where:{
+                nombre: {
+                    [Op.like]: "%" + req.query.search + "%"
+                }
+            }
+        })
+        .then((products) => {
+            console.log(products)
+            res.render("./products/searchProducts", {products})
+        })
+        
     },
 
     detail: (req,res) => {

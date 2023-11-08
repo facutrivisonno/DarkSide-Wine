@@ -13,8 +13,12 @@
     <link rel="icon" type="image/x-icon" href="./images/943026.png">
    
     <!-- Estilos personalizados CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/normalize.css">
+    
+    
+    
 
     <!-- Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> 
@@ -26,155 +30,126 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
     <header>
-        <!-- Barra de navegacación-->
-
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">DarkSide Wines</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Categorias
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Tinto</a></li>
-                      <li><a class="dropdown-item" href="#">Blanco</a></li>
-                      <li><a class="dropdown-item" href="#">Rosado</a></li>
-                      <li><a class="dropdown-item" href="#">Espumante</a></li>
-                    </ul>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-cart-plus"></i></a>
-                    </li>
-                        
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success custom-search-button" type="submit">Search</button>
-                </form>
-
-                <ul class="navbar-nav custom-margin">
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Registrarse</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Iniciar Sesión</a>
-                    </li>
-                  </ul>
-
-              </div>
-            </div>
-        </nav>
-         
+            
+      <!-- Barra de navegacación-->
+      <%- include ("./partials/header") %> 
+      
     </header>
+
 
     <body>
         <section class="hero">
-            <p>Todo lo mejor en vino, lo encontras aca</p>
+            <p>Todo lo mejor en vino, lo encontras aca!</p>
         </section>
 
         <main>
-        <h2 class="h2-article">Destacados</h3>
-        <section class="products-container">
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/salentein-blancdeblancs.jpg">
-                </div>  
-                <p class="desc-product">salentein blanc de blancs 750ml</p>
-                <p class="price-product">$3600</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
+
+        <!-- Seccion compra por marca -->    
+    
+        <h2>Comprá por bodega</h2> 
+            
+        <div class="glider-contain">
+            <div class="glider">
+                <% for (let i = 0; i < cellars.length; i++) { %>
+                    <a href="/products/cellar/<%=cellars[i].id %>"><img src="/images/bodegas/<%= cellars[i].logo %>"></a>            
+                <% } %>     
+            </div>
+          
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <div role="tablist" class="dots"></div>
+          </div>
+
+
+        <!-- Seccion en oferta -->
+
+        <h2>En oferta</h2>  
+        <section class="carrousel">
+            <div class="carrousel-container">
+                <button aria-label = "anterior" class="carrousel-anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carrousel-list-offer">
+                    <% for (let i = 0; i < productsEnOferta.length; i++) { %>
+                    <article class="carrousel-item">
+                        <a href="/products/<%= productsEnOferta[i].id%>">
+                            <div class="img-container">
+                                <img src="./images/<%= productsEnOferta[i].imagen %>">
+                            </div>
+                        </a>
+                        <p class="desc-product"><%= productsEnOferta[i].nombre %></p>
+                        <p class="price-product" id="price-product">$<%= productsEnOferta[i].precio %></p>
+                        <div class="products-button">
+                            <a  href="/products/<%=productsEnOferta[i].id %>">Detalle</a>
+                        </div>
+
+                    </article>
+                    <% } %> 
                 </div>
-            </article>
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/tintonegro.jpg">
-                </div>  
-                <p class="desc-product">Tinto negro uco rose 750ml</p>
-                <p class="price-product">$4500</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
-                </div>
-            </article>
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/nietose.jpg">
-                </div>  
-                <p class="desc-product">Nieto Senetiner brut nature </p>
-                <p class="price-product">$4500</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
-                </div>
-            </article>
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/Rutini-Malbec.jpg">
-                </div>  
-                <p class="desc-product">Rutini malbec 750ml</p>
-                <p class="price-product">$4500</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
-                </div>
-            </article>  
+
+                <button aria-label = "siguiente" class="carrousel-siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        
+            <div role="tablist" class="carrousel-indicadores">
+
+            </div>
+        
         </section>
     
-        <h2 class="h2-article">En oferta</h3>
-        <section class="products-container">
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/Rutini-Malbec.webp">
-                </div>  
-                <p class="desc-product">Rutini malbec 750ml</p>
-                <p class="price-product">$4500</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
+        <!-- Seccion destacado -->
+
+        <h2>Destacados</h2>  
+        <section class="carrousel">
+            <div class="carrousel-container">
+                <button aria-label = "anterior" class="carrousel-anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carrousel-list-featured">
+                    <% for (let i = 0; i < productosDestacados.length; i++) { %>
+                    <article class="carrousel-item">
+                        <a href="/products/<%= productosDestacados[i].id%>">
+                            <div class="img-container">
+                                <img src="./images/<%= productosDestacados[i].imagen %>">
+                            </div>
+                        </a>
+                        <p class="desc-product"><%= productosDestacados[i].nombre %></p>
+                        <p class="price-product" id="price-product">$<%= productosDestacados[i].precio %></p>
+                        <div class="products-button">
+                            <a  href="/products/<%=productosDestacados[i].id %>">Detalle</a>
+                        </div>
+
+                    </article>
+                    <% } %> 
                 </div>
-            </article>
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/Trumpeter-Malbec.webp">
-                </div>  
-                <p class="desc-product">Rutini malbec 750ml</p>
-                <p class="price-product">$4500</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
-                </div>
-            </article>
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/Rutini-Malbec.webp">
-                </div>  
-                <p class="desc-product">Rutini malbec 750ml</p>
-                <p class="price-product">$4500</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
-                </div>
-            </article>
-            <article class="product">
-                <div class="img-container">
-                    <img src="./images/Rutini-Malbec.jpg">
-                </div>  
-                <p class="desc-product">Rutini malbec 750ml</p>
-                <p class="price-product">$4500</p>
-                <div class="products-button">
-                    <a href="#">Detalle</a> <a href="#">Agregar al carrito</a>
-                </div>
-            </article>  
+
+                <button aria-label = "siguiente" class="carrousel-siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        
+            <div role="tablist" class="carrousel-indicadores">
+
+            </div>
+        
         </section>
+
+
         </main>
 
         <%- include ("./partials/footer") %> 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="./js/index.js"></script>
+   
+    
+    
 </body>
 </html>

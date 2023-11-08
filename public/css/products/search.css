@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+
+
+  main{
+    background-image: url('/images/fondo-madera-marron.jpg');    
+    background-attachment: fixed;
+    padding-bottom: 50px;
+    border-top: 15px solid ;
+  }
+
+
+
+/*-----Seccion productos----- */
+
+.h2Results{
+    padding: 20px 25px;
+    color: #B8860B;
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.product{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 2); 
+    border-radius: 8px; 
+    width: 40%;
+    margin: 5px;
+    padding: 25px;
+    transition: all 0,3ms;
+}
+
+.product:hover{ 
+    width: 310px
+}
+
+
+
+.desc-product{
+    padding-top: 10px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bolder;
+}
+
+.price-product{
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+#price-product{
+    text-decoration: line-through;
+    color: #965b72;
+}
+
+.products-button a{
+    text-decoration: none;
+    padding: 3px;
+    background-color: #965b72;
+    color: aliceblue;
+    margin-bottom: 46px;
+    margin-right: 15px;
+}
+
+.products-button a:hover{
+    background-color: aliceblue ;
+    color: #965b72;
+    font-weight: bolder;
+}
+
+.a-ofertas{
+    padding: 26px;
+    font-size: 20px;
+    color: #965b72;
+    font-weight: bold;
+}
+
+
+
+/* ------ Media Querys ------*/
+
+
+@media (min-width: 650px){
+    .hero p{
+        font-size: 45px;
+        margin: auto;
+        padding: 70px;
+    }
+
+    .product{
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 2); 
+        border-radius: 8px; 
+        padding: 14px; 
+        width: 28%;
+        margin-bottom: 38px;
+    }
+    
+    .desc-product{
+        color: #fff;
+        font-size: 1.1em;
+    }
+
+    .a-ofertas{
+        padding: 26px;
+        font-size: 20px;
+        color: #965b72;
+        font-weight: bold;
+    }
+
+    .h2-article{
+        padding: 20px 32px;
+        color: #B8860B;
+    }
+    
+  
+}
+
+
+@media (min-width: 950px){
+    
+    .product{
+        width: 22%;
+    }
+    
+}
+
+@media (min-width: 1200px){
+    
+    .product{
+        width: 18%;
+    }
+    .a-ofertas{
+        padding: 120px;
+        font-size: 17px;
+    }
+   
+  
+}
+

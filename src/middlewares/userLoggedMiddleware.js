@@ -6,6 +6,7 @@ function userLoggedMiddleware(req,res,next) {
         res.locals.userLogged = req.session.userLogged  // paso lo que tengo en session a una varialbe local 
 
     }
+    
 
     next();
 }

@@ -13,8 +13,8 @@
     <link rel="icon" type="image/x-icon" href="./images/943026.png">
    
     <!-- Estilos personalizados CSS-->
-    <link rel="stylesheet" href="/css/products/detail.css">
-    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/products/products.css">
+    <link rel="stylesheet" href="./css/normalize.css">
     
     
     
@@ -36,24 +36,30 @@
     </header>
 
     <body>
-        <section class="hero">
-            <p>Todo lo mejor en vino, lo encontrás aca</p>
-        </section>
+        
 
         <main>
-      
-            <article class="product-detail">
-                <h2> <%=product.nombre%> </h2>
-                <div class="container-image">
-                    <img src="../images/<%=product.imagen%>">
-                </div>
-                <p class="detail-price">$<%=product.precio%></p>
-                <button class="add-car">
-                    Agregar al carrito
-                </button>
-            </article>
+
         
-            
+        <h2 class="h2-article">Productos por categoria</h3>
+            <section class="products-container">
+                <% for (let i = 0; i < products.length; i++) { %>
+                        
+                    <article class="product">
+                        <a href="/products/<%= products[i].id%>">
+                            <div class="img-container">
+                                <img src="/images/<%= products[i].imagen %>">
+                            </div>
+                        </a>
+                        <p class="desc-product"><%= products[i].nombre %></p>
+                        <p class="price-product" id="price-product">$<%= products[i].precio %></p>
+                        <div class="products-button">
+                            <a  href="/products/<%=products[i].id %>">Detalle</a>
+                        </div>
+                    </article>
+                <% } %>
+            </section>
+    
         
         </main>
 

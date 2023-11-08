@@ -31,7 +31,7 @@ const userController = {
             newUser = {
                 nombre: req.body.nombreUsuario,
                 email: req.body.emailUsuario,
-                usertype: req.body.categoria,
+                userType: req.body.categoria,
                 contraseña: bcrypt.hashSync(req.body.passwordUsuario,10)
             }
     
@@ -53,34 +53,27 @@ const userController = {
         
     },
 
-    processLogin: (req,res) =>{
-
+    processLogin: (req, res) => {
         db.Users.findAll()
-            .then((users) => {
-                let authUser
-
-                for (let i = 0; i < users.length; i++) {
-                   
-                    if(users[i].email == req.body.emailUsuario){
-                        if (bcrypt.compareSync(req.body.passwordUsuario, users[i].contraseña)) {
-                            authUser = users[i];                     
-                        }
-                    }  
+          .then(users => {
+            let authUser;
+      
+            users.forEach(user => {
+                if (user.email == req.body.emailUsuario) {
+                    if (bcrypt.compareSync(req.body.passwordUsuario, user.contraseña)) {
+                        authUser = user;
+                        req.session.userLogged = authUser;
+                    }
                 }
-                
-                if(authUser){
-                    delete authUser.password //elimina la propiedad password
-                    req.session.userLogged = authUser
-                    res.redirect("/logueado");
-                    
-                } else {
-                    return res.render("users/login", {msgErrors: [{msg: "Credenciales invalidas"}]})
-                }
-             
-                
             })
-
-        },
+            
+            if (authUser) {
+              res.redirect("/logueado");
+            } else {
+                return res.render("users/login", {msgErrors: [{msg: "Credenciales invalidas"}]})
+            }
+          });
+      },
 
         logout : (req,res) =>{
             req.session.destroy();
