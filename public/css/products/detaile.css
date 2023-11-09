@@ -124,4 +124,30 @@ p {
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
+    opacity: 0.5
+}
+
+.comprar:hover{
+    opacity: 1;
+}
+
+.edit-delete{
+    padding: 20px;
+    display: flex;
+    text-align: center;
+}
+
+.buttonDelete{
+    background-color: red;
+    color: #fff;
+    margin-right: 10px ;
+}
+
+.buttonEdit {
+    background-color: #007bff;
+}
+
+.buttonEdit a{
+    text-decoration: none;
+    color: #fff
 }

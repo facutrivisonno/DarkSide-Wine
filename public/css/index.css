@@ -35,7 +35,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60vh; /* Establece una altura mínima para asegurar que el contenido sea visible. */
+    min-height: 75vh; /* Establece una altura mínima para asegurar que el contenido sea visible. */
     border-bottom: 15px solid ;
     
   }
@@ -49,13 +49,21 @@ img{
   }
 
 .hero p{
-    color:#965b72;
+    color: beige;
     font-size: 30px;
     padding: 20px;
     font-weight: 900;
 }
 
 /*-----Seccion carrousel compra por bodega----- */
+
+.carrousel-item{
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.carrousel-item:hover{
+    transform: translateY(-5px);
+}
 
 .glider-contain{
     margin: 25px 0;
@@ -134,6 +142,11 @@ h2{
     background-color: #965b72;
     width: 30%;
     margin: auto;
+    opacity: 0.5;
+}
+
+.products-button:hover{
+   opacity: 1;
 }
 
 .products-button a { 

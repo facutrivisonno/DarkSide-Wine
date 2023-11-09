@@ -37,27 +37,31 @@
 
     <body>
         
-
+    
         <main>
             <section class="detalle-producto">
                 <img src="../images/<%=product.imagen%>" alt="Vino 1" class="image-product">
                 <h2><%=product.nombre%></h2>
                 <p><%=product.descripcion%></p>
                 <div class="flexbox-price">
-                    <span class="precio">$20.00</span>
+                    <span class="precio">$<%=product.precio%></span>
                     <div class="cantidad-producto">
-
                         <input type="number" id="cantidad" value="1" min="1">
-
                     </div>
-                    
                 </div>
                 
                 <button class="comprar">Agregar al carrito</button> 
-                <form method="POST" action="/products/delete/<%=product.id%>?_method=delete">
-                    <button type="submit" class="buttonDelete">Eliminar</button>
-                </form>
-                <button type="submit" class="buttonDelete"><a href="/products/edit/<%=product.id%>">Editar</a></button>
+                
+                <div class="edit-delete">
+                    <% if(isLogged && userLogged.userType == 1) { %>
+                        <form method="POST" action="/products/delete/<%=product.id%>?_method=delete">
+                            <button type="submit" class="buttonDelete">Eliminar</button>
+                        </form>
+                        <button type="submit" class="buttonEdit"><a href="/products/edit/<%=product.id%>" >Editar</a></button>
+                    <%  }  %>
+                </div>
+                
+               
                 
             </section>
         </main>
