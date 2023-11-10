@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const config = require("./config.js");
+const PORT = config.PORT;
 
 const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
@@ -42,6 +44,6 @@ app.use("/products", productRouter);
 app.use("/users", userRouter);
 
 
-app.listen(3019, function(){
+app.listen(PORT, function(){
     console.log("Servidor corriendo en http://localhost:3019");
 })
