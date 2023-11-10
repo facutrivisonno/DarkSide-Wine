@@ -3,34 +3,12 @@
 }
 
 
-
-.hero {
-    background-image: url("../../images/copa-de-vino-portada-1024x478.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 85vh; /* Establece una altura mínima para asegurar que el contenido sea visible. */
-  }
-
-/*   main{
+main{
     background-image: url('../../images/fondo-madera-marron.jpg');    
     background-attachment: fixed;
     padding-bottom: 50px;
     border-top: 15px solid ;
-  } */
-
-.hero p{
-    color: beige;
-    font-size: 30px;
-    margin: auto;
-    font-weight: 900;
-    padding-left: 20px;
-}
-
+} 
 
 
 /* ------ Detalle producto -------- */
@@ -51,6 +29,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centra verticalmente */
+    background-color: #fff;
 }
 
 .detalle-producto img {
@@ -124,7 +103,9 @@ p {
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
-    opacity: 0.5
+    opacity: 0.5;
+    transition: all 0.45s;
+
 }
 
 .comprar:hover{

@@ -7,7 +7,6 @@ img{
 }
 
 
-
 .hero {
     background-image: url("/images/copa-de-vino-portada-1024x478.jpg");
     background-attachment: fixed;
@@ -18,14 +17,14 @@ img{
     justify-content: center;
     align-items: center;
     min-height: 85vh; /* Establece una altura mínima para asegurar que el contenido sea visible. */
-  }
+}
 
-  main{
+main{
     background-image: url('/images/fondo-madera-marron.jpg');    
     background-attachment: fixed;
     padding-bottom: 50px;
     border-top: 15px solid ;
-  }
+}
 
 .hero p{
     color: beige;
@@ -75,14 +74,6 @@ img{
     text-align: center;
 }
 
-
-.search-input{
-     
-    text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-}
-
 .products-container{
     display: flex;
     flex-wrap: wrap;
@@ -91,16 +82,17 @@ img{
 
 
 .product{
-    
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 2); 
     border-radius: 8px; 
     width: 44%;
-    margin: 10px 0;
-    padding: 18px;
-    transition: all 0,3ms;
+    margin: 12px 4px;
+    padding: 12px;
+    transition: all 0.45s;
 }
 
 .product:hover{ 
         box-shadow: 0 0 10px rgb(100,100,100);
+        transform: translateY(-5px);
 }
 
 
@@ -114,19 +106,15 @@ img{
 }
 
 .price-product{
-    color: #fff;
+    color: #007bff;
     font-size: 1.1em;
     font-weight: bolder;
 }
 
-#price-product{
-    text-decoration: line-through;
-    color: #965b72;
-}
 
 .products-button a{
     text-decoration: none;
-    padding: 3px;
+    padding: 2px;
     background-color: #965b72;
     color: aliceblue;
     margin-bottom: 46px;

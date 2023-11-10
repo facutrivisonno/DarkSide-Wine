@@ -63,11 +63,15 @@ const productController = {
 
     createProduct: (req,res) => {
       
-        db.Categories.findAll()
-            .then(categories => {
-            console.log(categories);
-            res.render("./products/createProduct", {categories}); 
-        }) 
+        let promiseCategory = db.Categories.findAll()
+        
+        let promiseCellar = db.Cellars.findAll()
+
+        Promise.all([promiseCategory,promiseCellar])
+            .then(([categories, cellars]) => {
+                res.render("./products/createProduct", { categories, cellars });
+            }) 
+        
     },
 
     processCreate: (req,res) => {
@@ -99,34 +103,55 @@ const productController = {
         
         db.Products.findByPk(req.params.id)
             .then(product => {
-            console.log(product);
             res.render("./products/editProduct", {product}); 
         }) 
     },
 
-    update: (req,res) =>{
-        let dest = 0
-        let of = 0
-        
-        if (req.body.especialProduct != 0 && req.body.especialProduct == 1) {
-            dest = 1
-        } else {
-            of = 1
-        }
-        
-        db.Products.update({
-            nombre : req.body.nameProduct,
-            descripcion: req.body.descriptionProduct,
-            precio: req.body.priceProduct,
-            destacado: dest,
-            oferta: of
-        },  {
-                where:{
-                    id: req.params.id
+    update: (req, res) => {
+        db.Products.findByPk(req.params.id)
+            .then(originalProduct => {
+                if (!originalProduct) {
+                    return res.status(404).send("Product not found");
                 }
-        })
-        
-        res.redirect("/products")
+    
+                const {cellarProduct, imageProduct} = originalProduct;
+    
+                let dest = 0;
+                let of = 0;
+    
+                if (req.body.especialProduct != 0 && req.body.especialProduct == 1) {
+                    dest = 1;
+                } else {
+                    of = 1;
+                }
+    
+                const updateFields = {
+                    nombre: req.body.nameProduct,
+                    descripcion: req.body.descriptionProduct,
+                    precio: req.body.priceProduct,
+                    cellarProduct: cellarProduct,
+                    imageProduct: imageProduct,
+                    destacado: dest,
+                    oferta: of,
+                };
+    
+                console.log(req.body)
+
+                // Realiza la actualización y devuelve la promesa resultante
+                return db.Products.update(updateFields, {
+                    where: {
+                        id: req.params.id,
+                    },
+                });
+            })
+                .then(() => {
+                // Después de que la actualización se haya completado, realiza la redirección
+                    res.redirect("/products");
+                    })
+                    .catch(error => {
+                        console.error("Error updating product:", error);
+                        res.status(500).send("Error updating product");
+                    });
     },
 
     delete: (req,res) =>{

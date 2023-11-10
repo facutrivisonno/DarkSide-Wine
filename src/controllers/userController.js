@@ -68,7 +68,7 @@ const userController = {
             })
             
             if (authUser) {
-              res.redirect("/logueado");
+              res.redirect("/");
             } else {
                 return res.render("users/login", {msgErrors: [{msg: "Credenciales invalidas"}]})
             }

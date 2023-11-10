@@ -56,9 +56,9 @@
                 <div id="grupo-nombreUsuario">    
                   <div class="element-form" id="input-nombreUsuario">
                       <label>Descripción:</label>
-                      <input type="textarea" name="descriptionProduct" class="formulario-input">
+                      <input type="text" name="descriptionProduct" class="formulario-input">
                   </div>
-                  <p class="formulario-input-error">El nombre debe ser correcto</p>
+                  <p class="formulario-input-error">La descripcion debe ser correcto</p>
                 </div>
             
                 <div class="element-form">
@@ -69,6 +69,15 @@
                         <% }) %>
                       </select>
                 </div>
+
+                <div class="element-form">
+                  <label>Bodega:</label>
+                    <select name="cellarProduct">
+                      <% cellars.forEach(cellars => { %>
+                          <option value="<%= cellars.id %>">  <%= cellars.nombre %> </option>
+                      <% }) %>
+                    </select>
+              </div>
                 
                 <div id="grupo-priceProduct"> 
                     <div class="element-form" id="input-emailUsuario">
@@ -82,8 +91,9 @@
                     <label>Producto:</label>
                       <select name="especialProduct">
                           <option value="0" selected>Estandar</option>
-                          <option value="2">En oferta</option>
                           <option value="1">Destacado</option>
+                          <option value="2">En oferta</option>
+                          
                       </select>
                 </div>
 

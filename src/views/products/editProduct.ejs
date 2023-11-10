@@ -13,7 +13,7 @@
     <link rel="icon" type="image/x-icon" href="./images/943026.png">
    
     <!-- Estilos personalizados CSS-->
-    <link rel="stylesheet" href="../../css/products/create-product.css">
+    <link rel="stylesheet" href="/css/products/create-product.css">
     <link rel="stylesheet" href="./css/normalize.css">
     
     
@@ -36,7 +36,7 @@
     <main>
         <h2 class="title-register">Editar producto</h2>
           <div class="container-form">
-            <form method="POST" action="/products/edit/<%=product.id%>?_method=put" enctype="multipart/form-data" class="registration-form" id="formulario">
+            <form method="POST" action="/products/edit/<%= product.id%>?_method=PUT"  class="registration-form" id="formulario">
 
                 <div id="grupo-nombreUsuario">    
                     <div class="element-form" id="input-nombreUsuario">
@@ -49,13 +49,12 @@
                 <div id="grupo-nombreUsuario">    
                   <div class="element-form" id="input-nombreUsuario">
                       <label>Descripción:</label>
-                      <input type="textarea" name="descriptionProduct" class="formulario-input" value="<%= product.descripcion %>">
+                      <input type="text" name="descriptionProduct" class="formulario-input" value="<%= product.descripcion %>">
                   </div>
                   <p class="formulario-input-error">El nombre debe ser correcto</p>
                 </div>
             
-                
-                
+              
                 <div id="grupo-priceProduct"> 
                     <div class="element-form" id="input-emailUsuario">
                         <label>Precio:</label>
@@ -68,8 +67,9 @@
                     <label>Producto:</label>
                       <select name="especialProduct">
                           <option value="0" selected>Estandar</option>
-                          <option value="2">En oferta</option>
                           <option value="1">Destacado</option>
+                          <option value="2">Oferta</option>
+                          
                       </select>
                 </div>
 

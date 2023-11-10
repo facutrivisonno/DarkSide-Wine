@@ -10,22 +10,6 @@ img{
     width: 100%;
 }
 
-/* Personalizacion header */
-.custom-search-button{
-    background-color: black !important;
-    color: #ffffff !important;
-    border-color: #B8860B !important;
-}
-
-.custom-search-button:hover{
-    background-color: #B8860B  !important;
-    opacity: 0.9;
-}
-
-.custom-margin{
-    margin-left: 10px;
-}
-
 .hero {
     background-image: url("/images/copa-de-vino-portada-1024x478.jpg");
     background-attachment: fixed;
@@ -58,11 +42,11 @@ img{
 /*-----Seccion carrousel compra por bodega----- */
 
 .carrousel-item{
-    transition: box-shadow 0.3s ease-in-out;
+    transition: all 0.30s ease-in-out;
 }
 
 .carrousel-item:hover{
-    transform: translateY(-5px);
+    transform: translateY(-7px);
 }
 
 .glider-contain{
@@ -87,8 +71,8 @@ h2{
     position: relative
 }
 
-.carrousel-anterior,
-.carrousel-siguiente {
+.carrousel-anterior,.carrousel-anterior-featured,
+.carrousel-siguiente,.carrousel-siguiente-featured {
 	position: absolute;
 	display: block;
 	width: 30px;
@@ -104,16 +88,18 @@ h2{
 }
 
 .carrousel-anterior:hover,
-.carrousel-siguiente:hover {
+.carrousel-anterior-featured:hover,
+.carrousel-siguiente:hover,
+.carrousel-siguiente-featured :hover{
 	opacity: 100%;
 }
 
 
-.carrousel-anterior{
+.carrousel-anterior-featured,.carrousel-anterior{
     left: -30px;
 }
 
-.carrousel-siguiente{
+.carrousel-siguiente-featured, .carrousel-siguiente{
     right: -30px;
 }
 
@@ -143,6 +129,7 @@ h2{
     width: 30%;
     margin: auto;
     opacity: 0.5;
+    transition: all 0.45s;
 }
 
 .products-button:hover{
@@ -155,6 +142,16 @@ h2{
 }
 
 
+/*------Boton wsp ----- */
+
+.btn-wsp {
+    display: none;
+}
+
+
+
+
+
 /* ------ Media Querys ------*/
 
 @media (min-width: 500px){
@@ -165,6 +162,28 @@ h2{
     }
     .footer-container i{
         font-size: 26px;
+    }
+    .btn-wsp {
+        display: inline;
+        position: fixed;
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+        bottom: 60px;
+        right:30px;
+        background-color: #0df053;
+        color: #ffffff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        transition: all 0.45s;
+    }
+    
+    .btn-wsp:hover {
+        color: #0df053;
+        background-color: #fff;
     }
 }
 

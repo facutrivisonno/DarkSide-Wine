@@ -24,6 +24,7 @@ let fileUpload = multer({storage:storage})
 
 // Middleware
 const adminMiddleware = require("../middlewares/adminMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware")
 
 
 router.get("/", productController.list);
@@ -35,10 +36,10 @@ router.get("/search", productController.search)
 router.get("/create", adminMiddleware ,productController.createProduct);
 router.post("/create", fileUpload.single("imageProduct") ,productController.processCreate);
 
-router.get("/edit/:id", productController.editProduct);
+router.get("/edit/:id", adminMiddleware, productController.editProduct);
 router.put("/edit/:id",productController.update);
 
-router.delete("/delete/:id",productController.delete);
+router.delete("/delete/:id",adminMiddleware, productController.delete);
 
 router.get("/:id", productController.detail);
 

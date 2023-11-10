@@ -21,19 +21,18 @@
 }
 
 .bottom-footer i{
-    font-size: 29px;
+    font-size: 18px;
     padding: 4px 10px;
     color: #fff;
     cursor: pointer;
     border-radius: 100%;
+    transition: all 0.45s;
 }
 
 .bottom-footer i:hover{
     color: #fff;
     background-color: #B8860B;
-    
     padding: 10;
-
 }
 
 
@@ -45,7 +44,7 @@
         
     }
     .bottom-footer i{
-        font-size: 26px;
+        font-size: 25px;
     }
 }
 
@@ -54,10 +53,11 @@
     
     .bottom-footer{
         justify-content: space-between;
-        padding: 30px 50px;
-        
+        padding: 30px;
+      
     }
     .bottom-footer i{
-        font-size: 22px;
+        font-size: 27px;
+        
     }
 }

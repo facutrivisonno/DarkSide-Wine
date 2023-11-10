@@ -5,7 +5,7 @@ const router = express.Router();
 const indexController = require("../controllers/userController");
 
 const authMiddleware = require("../middlewares/authMiddleware")
-
+const guestMiddleware = require("../middlewares/guestMiddleware")
 
 // Validaciones del lado del servidor
 const {body} = require("express-validator");
@@ -22,10 +22,10 @@ const validateRegister = [
 ];
 
 
-router.get("/register" ,indexController.register);
+router.get("/register" , guestMiddleware ,indexController.register);
 router.post("/register", validateRegister  ,indexController.processRegister);
 
-router.get("/login", indexController.login);
+router.get("/login", guestMiddleware, indexController.login);
 router.post("/login", validateRegister ,indexController.processLogin);
 
 router.get("/logout", indexController.logout);

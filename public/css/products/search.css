@@ -54,15 +54,11 @@ img{
 }
 
 .price-product{
-    color: #fff;
+    color: #007bff;
     font-size: 1.1em;
     font-weight: bolder;
 }
 
-#price-product{
-    text-decoration: line-through;
-    color: #965b72;
-}
 
 .products-button a{
     text-decoration: none;

@@ -5,7 +5,7 @@ window.addEventListener('load', function(){
 	new Glider(document.querySelector('.glider'), {
 		slidesToShow: 5,
 		slidesToScroll: 1,
-		draggable: true,
+		
 		dots: '.dots',
 		arrows: {
 		  prev: '.glider-prev',
@@ -24,10 +24,18 @@ window.addEventListener('load', function(){
 			  // screens greater than >= 1024px
 			  breakpoint: 800,
 			  settings: {
-				slidesToShow: 5,
+				slidesToShow: 3,
 				slidesToScroll: 1
 			  }
 			}
+			,{
+				// screens greater than >= 1024px
+				breakpoint: 950,
+				settings: {
+				  slidesToShow: 5,
+				  slidesToScroll: 1
+				}
+			  }
 		]
 	  });
 	
@@ -55,10 +63,25 @@ window.addEventListener('load', function(){
 			  // screens greater than >= 1024px
 			  breakpoint: 800,
 			  settings: {
-				slidesToShow: 5,
+				slidesToShow: 3,
 				slidesToScroll: 1
 			  }
-			}
+			},{
+				// screens greater than >= 1024px
+				breakpoint: 1000,
+				settings: {
+				  slidesToShow: 4,
+				  slidesToScroll: 1
+				}
+			  }
+			  ,{
+				// screens greater than >= 1024px
+				breakpoint: 1320,
+				settings: {
+				  slidesToShow: 5,
+				  slidesToScroll: 1
+				}
+			  }
 		]
 	});
 
@@ -67,10 +90,10 @@ window.addEventListener('load', function(){
 	new Glider(document.querySelector('.carrousel-list-featured'), {
 		slidesToScroll: 1,
 		slidesToShow: 1,
-		dots: '.carrousel-indicadores',
+		dots: '.carrousel-indicadores-featured',
 		arrows: {
-			prev: '.carrousel-anterior',
-			next: '.carrousel-siguiente'
+			prev: '.carrousel-anterior-featured',
+			next: '.carrousel-siguiente-featured'
 		},
 		responsive: [
 			{
@@ -85,10 +108,25 @@ window.addEventListener('load', function(){
 			  // screens greater than >= 1024px
 			  breakpoint: 800,
 			  settings: {
-				slidesToShow: 5,
+				slidesToShow: 3,
 				slidesToScroll: 1
 			  }
-			}
+			},{
+				// screens greater than >= 1024px
+				breakpoint: 1000,
+				settings: {
+				  slidesToShow: 4,
+				  slidesToScroll: 1
+				}
+			  }
+			  ,{
+				// screens greater than >= 1024px
+				breakpoint: 1320,
+				settings: {
+				  slidesToShow: 5,
+				  slidesToScroll: 1
+				}
+			  }
 		]
 	});
 
