@@ -1,14 +1,14 @@
 module.exports= {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "dbDS",
+    "password": 12345678,
     "database": "darkside",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
+    "username": "dbDS",
+    "password": 12345678,
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
